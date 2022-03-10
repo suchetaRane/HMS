@@ -84,7 +84,7 @@ class Login(tk.Frame):
 
         ####DATABASE ACCESS####
         def logindata(self):
-            con = pymysql.connect(user="root", host="localhost", passwd="timtu123", database="project")
+            con = pymysql.connect(user="root", host="localhost", passwd="sucheta", database="project")
             cur = con.cursor()
             cur.execute("Select * from login where username=%s and password=%s", (self.entry1.get(), self.entry2.get()))
             row = cur.fetchone()
@@ -134,7 +134,7 @@ class Login(tk.Frame):
             messagebox.showerror("Warning", "All fields required")
 
         else:
-            con = pymysql.connect(user="root", host="localhost", passwd="timtu123", database="project")
+            con = pymysql.connect(user="root", host="localhost", passwd="sucheta", database="project")
             cur = con.cursor()
             if len(self.entry3.get()) != 10:
                 messagebox.showinfo("ERROR", 'Username can only be 10 digits')
@@ -273,7 +273,7 @@ class BookApp(tk.Frame):
         # function for list of doctors
         def choose_doc(e):
             if speciality_dropdown.get() == "Pediatrics":
-                con = pymysql.connect(user="root", host="localhost", passwd="timtu123", database="project")
+                con = pymysql.connect(user="root", host="localhost", passwd="sucheta", database="project")
                 cur = con.cursor()
                 query = ("select name from doctor where specialty = 'pediatrics'")
                 cur.execute(query)
@@ -287,7 +287,7 @@ class BookApp(tk.Frame):
                 con.commit()
                 con.close()
             elif speciality_dropdown.get() == "Cardiology":
-                con = pymysql.connect(user="root", host="localhost", passwd="timtu123", database="project")
+                con = pymysql.connect(user="root", host="localhost", passwd="sucheta", database="project")
                 cur = con.cursor()
                 query = ("select name from doctor where specialty = 'cardiology'")
                 cur.execute(query)
@@ -301,7 +301,7 @@ class BookApp(tk.Frame):
                 con.commit()
                 con.close()
             elif speciality_dropdown.get() == "Neurology":
-                con = pymysql.connect(user="root", host="localhost", passwd="timtu123", database="project")
+                con = pymysql.connect(user="root", host="localhost", passwd="sucheta", database="project")
                 cur = con.cursor()
                 query = ("select name from doctor where specialty = 'neurology'")
                 cur.execute(query)
@@ -315,7 +315,7 @@ class BookApp(tk.Frame):
                 con.commit()
                 con.close()
             elif speciality_dropdown.get() == "Gynecology":
-                con = pymysql.connect(user="root", host="localhost", passwd="timtu123", database="project")
+                con = pymysql.connect(user="root", host="localhost", passwd="sucheta", database="project")
                 cur = con.cursor()
                 query = ("select name from doctor where specialty = 'gynecology'")
                 cur.execute(query)
@@ -329,7 +329,7 @@ class BookApp(tk.Frame):
                 con.commit()
                 con.close()
             elif speciality_dropdown.get() == "Orthopedics":
-                con = pymysql.connect(user="root", host="localhost", passwd="timtu123", database="project")
+                con = pymysql.connect(user="root", host="localhost", passwd="sucheta", database="project")
                 cur = con.cursor()
                 query = ("select name from doctor where specialty = 'orthopedics'")
                 cur.execute(query)
@@ -359,7 +359,7 @@ class BookApp(tk.Frame):
             if self.entry1.get() == '' or self.entry2.get() == '' or speciality_dropdown.get() == '' or date_dropdown.get() == '' or time_dropdown.get() == '':
                 messagebox.showerror("Warning", "All fields required")
             else:
-                con = pymysql.connect(user="root", host="localhost", passwd="timtu123", database="project")
+                con = pymysql.connect(user="root", host="localhost", passwd="sucheta", database="project")
                 cur = con.cursor()
                 cur.execute("select * from appointment")
                 data = cur.fetchall()
@@ -493,7 +493,7 @@ class Covid(tk.Frame):
                 messagebox.showerror("Warning", "All fields required")
 
             else:
-                con = pymysql.connect(user="root", host="localhost", passwd="timtu123", database="project")
+                con = pymysql.connect(user="root", host="localhost", passwd="sucheta", database="project")
                 cur = con.cursor()
                 cur.execute("select * from covid_appointment")
                 data = cur.fetchall()
